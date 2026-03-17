@@ -87,4 +87,18 @@ public class ProductService {
         }
         return false;
     }
+
+    //Bonus
+
+    public List<Product> searchByName(String keyword) {
+        // TODO: Delegate to repository
+        return pRepository.findByNameContaining(keyword);
+    }
+
+    public List<Product> searchByCategory(String keyword) {
+        // TODO: Delegate to repository
+        return pRepository.findByCategory(keyword);
+    }
+
+
 }

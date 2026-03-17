@@ -48,6 +48,13 @@ public class ProductController {
         return ResponseEntity.ok(products);
     }
 
+//Bonus
+    @GetMapping("/search")
+    public ResponseEntity<List<Product>> searchProducts(@RequestParam String keyword) {
+        List<Product> results = pService.searchByName(keyword);
+        return ResponseEntity.ok(results);
+    }
+
     /**
      * GET /api/products/{id}
      * Return the product with status 200, or 404 if not found.
@@ -96,5 +103,15 @@ public class ProductController {
         }
         // Hint: return ResponseEntity.noContent().build() for success
     }
+
+
+    // Bonus
+    @GetMapping("/category/{category}")
+    public ResponseEntity<List<Product>> getByCategory(@PathVariable String category) {
+        List<Product> results = pService.searchByCategory(category);
+        return ResponseEntity.ok(results);
+    }
+
 }
+
 

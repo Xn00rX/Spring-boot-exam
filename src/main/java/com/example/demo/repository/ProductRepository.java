@@ -95,4 +95,25 @@ public class ProductRepository {
         }
         return false;
     }
+
+    // Bonus
+    public List<Product> findByNameContaining(String keyword) {
+        List<Product> results = new ArrayList<>();
+        for (Product product : products){
+            if(product.getName().toLowerCase().contains(keyword.toLowerCase())){
+                results.add(product);
+            }
+        }
+        return results;
+    }
+
+    public List<Product> findByCategory(String category) {
+        List<Product> results = new ArrayList<>();
+        for (Product product : products){
+            if(product.getCategory().toLowerCase().contains(category.toLowerCase())){
+                results.add(product);
+            }
+        }
+        return results;
+    }
 }

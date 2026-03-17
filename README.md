@@ -55,3 +55,15 @@ curl -X DELETE http://localhost:8080/api/products/1
 
 #### Update
 ![Project Screenshot](./screenShots/img_2.png)
+
+### Bonus
+#### Search by Name
+```bash
+curl -X GET "http://localhost:8080/api/products/search?keyword=pen"
+```
+#### search by category
+```bash
+curl -X GET "http://localhost:8080/api/products/category/electronics"
+```
+ ### Bonus screenshoot
+![Project Screenshot](./screenShots/img_3.png)
